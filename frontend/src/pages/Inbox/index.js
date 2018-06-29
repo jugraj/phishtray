@@ -37,14 +37,13 @@ class Inbox extends Component {
       email => (emailId === email.id ? (email.read = true) : email)
     );
 
-    this.setState({ updatedEmails });
+    this.setState({ updatedEmails }, this.emailRender);
   };
 
   emailRender = () => {
     this.setState({
       thread: getThread(this.props.location.pathname.substring(7)),
-    }),
-      this.emailReRender;
+    });
   };
 
   emailAdd = email => {

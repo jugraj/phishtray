@@ -27,10 +27,9 @@ const Text = styled('div')(
   })
 );
 
-export default function EmailListItem({ thread, emailRead, emailRender }) {
+export default function EmailListItem({ thread, emailRead }) {
   const handleClick = () => {
     emailRead(thread.id);
-    emailRender(thread.id);
   };
 
   return (
